@@ -49,9 +49,9 @@ export default class Index extends Component {
           current={this.state.current}
           tabList={
             [
-              {title: '待办事项', iconType: 'bullet-list', text: 'new'},
+              {title: '待办事项', iconType: 'bullet-list'},
               {title: '拍照', iconType: 'camera'},
-              {title: '文件夹', iconType: 'folder', text: '100', max: 99}
+              {title: '文件夹', iconType: 'folder'}
             ]
           }
           onClick={this.handleClick.bind(this)}

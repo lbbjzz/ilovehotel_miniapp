@@ -5,6 +5,9 @@ import {AtTabBar, AtSearchBar, AtNavBar} from 'taro-ui'
 // import "taro-ui/dist/style/components/button.scss" // 按需引入
 import 'taro-ui/dist/style/index.scss' //全局引入
 import './index.scss'
+import image1 from '../../static/image/1.jpg'
+import image2 from '../../static/image/2.jpg'
+import image3 from '../../static/image/3.jpg'
 
 export default class Index extends Component {
 
@@ -28,6 +31,7 @@ export default class Index extends Component {
   }
 
   handleClick(value) {
+    console.log(value)
     this.setState({
       current: value
     })
@@ -42,12 +46,6 @@ export default class Index extends Component {
   render() {
     return (
       <div>
-       {/*头部*/}
-        <AtNavBar
-          className={"home-navbar"}
-          color='#ececec'
-          title={this.state.title}
-        />
         {/*搜索*/}
         <AtSearchBar
           value={this.state.value}
@@ -61,15 +59,22 @@ export default class Index extends Component {
           vertical={false}
           circular
           indicatorDots
+          interval={3000}
           autoplay={true}>
           <SwiperItem>
-            <View className='demo-text-1'>焦</View>
+            <View className='demo-text-1'>
+              <img className={'home-swiper'} src={image1}/>
+            </View>
           </SwiperItem>
           <SwiperItem>
-            <View className='demo-text-2'>猪</View>
+            <View className='demo-text-1'>
+              <img className={'home-swiper'} src={image2}/>
+            </View>
           </SwiperItem>
           <SwiperItem>
-            <View className='demo-text-3'>猪</View>
+            <View className='demo-text-1'>
+              <img className={'home-swiper'} src={image3}/>
+            </View>
           </SwiperItem>
         </Swiper>
         {/*底部*/}

@@ -1,3 +1,20 @@
-.home-navbar{
+.home-navbar {
   background-color: #ececec;
 }
+
+.test-h {
+  border-radius: 10px;
+  width: 96vw;
+  height: 25vh;
+  margin-left: 50%;
+  transform: translateX(-50%);
+
+  .demo-text-1 {
+    .home-swiper {
+      max-width: 100%;
+      max-height: 100%;
+      border: none;
+    }
+  }
+}
+

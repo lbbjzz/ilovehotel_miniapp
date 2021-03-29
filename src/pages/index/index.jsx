@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
-import {View, Swiper, SwiperItem, Image} from '@tarojs/components'
-import {AtTabBar, AtSearchBar} from 'taro-ui'
+import {View} from '@tarojs/components'
+import {AtTabBar} from 'taro-ui'
+import Home from '../../components/home/home'
 
 // import "taro-ui/dist/style/components/button.scss" // 按需引入
+// eslint-disable-next-line import/first
 import 'taro-ui/dist/style/index.scss' //全局引入
 import './index.scss'
-import image1 from '../../static/image/1.jpg'
-import image2 from '../../static/image/2.jpg'
-import image3 from '../../static/image/3.jpg'
+
 
 export default class Index extends Component {
 
@@ -24,7 +24,7 @@ export default class Index extends Component {
   constructor() {
     super(...arguments)
     this.state = {
-      value: '',
+      // value: '',
       current: 0,
       // title: '首页'
     }
@@ -33,51 +33,25 @@ export default class Index extends Component {
   handleClick(value) {
     console.log(value)
     this.setState({
-      current: value
+      current: value,
     })
   }
 
-  onChange(value) {
-    this.setState({
-      value: value
-    })
-  }
+  // onChange(value) {
+  //   this.setState({
+  //     value: value
+  //   })
+  // }
 
   render() {
     return (
       <View>
         {/*搜索*/}
-        <AtSearchBar
-          value={this.state.value}
-          onChange={this.onChange.bind(this)}
-        />
-        {/*轮播图*/}
-        <Swiper
-          className='test-h'
-          indicatorColor='#999'
-          indicatorActiveColor='#333'
-          vertical={false}
-          circular
-          indicatorDots
-          interval={3000}
-          autoplay='true'
-        >
-          <SwiperItem>
-            <View className='demo-text-1'>
-              <Image className='home-swiper' mode='scaleToFill' src={image1} />
-            </View>
-          </SwiperItem>
-          <SwiperItem>
-            <View className='demo-text-1'>
-              <Image className='home-swiper' src={image2} />
-            </View>
-          </SwiperItem>
-          <SwiperItem>
-            <View className='demo-text-1'>
-              <Image className='home-swiper' src={image3} />
-            </View>
-          </SwiperItem>
-        </Swiper>
+        {/*<AtSearchBar*/}
+        {/*  value={this.state.value}*/}
+        {/*  onChange={this.onChange.bind(this)}*/}
+        {/*/>*/}
+        <Home></Home>
         {/*底部*/}
         <AtTabBar
           fixed

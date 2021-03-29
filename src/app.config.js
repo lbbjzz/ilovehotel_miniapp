@@ -1,7 +1,7 @@
 export default {
   pages: [
     'pages/index/index',
-    'pages/user/user'
+    // 'components/user/user'
   ],
   window: {
     backgroundTextStyle: 'light',

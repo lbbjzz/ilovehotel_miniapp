@@ -2,7 +2,7 @@
 	"miniprogramRoot": "dist/",
 	"projectname": "ilovehotel_miniapp",
 	"description": "基于ReactJs/Taro的酒店管理系统小程序",
-	"appid": "touristappid",
+	"appid": "wxfd065333ce818ef1",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,

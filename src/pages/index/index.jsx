@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {View} from '@tarojs/components'
 import {AtTabBar} from 'taro-ui'
-import Home from '../../components/home/home'
+import Home from "../../components/home";
 
 // import "taro-ui/dist/style/components/button.scss" // 按需引入
 // eslint-disable-next-line import/first
@@ -24,9 +24,7 @@ export default class Index extends Component {
   constructor() {
     super(...arguments)
     this.state = {
-      // value: '',
       current: 0,
-      // title: '首页'
     }
   }
 
@@ -37,20 +35,11 @@ export default class Index extends Component {
     })
   }
 
-  // onChange(value) {
-  //   this.setState({
-  //     value: value
-  //   })
-  // }
 
   render() {
     return (
       <View>
-        {/*搜索*/}
-        {/*<AtSearchBar*/}
-        {/*  value={this.state.value}*/}
-        {/*  onChange={this.onChange.bind(this)}*/}
-        {/*/>*/}
+
         <Home></Home>
         {/*底部*/}
         <AtTabBar

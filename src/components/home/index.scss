@@ -1,0 +1,132 @@
+.test-h {
+  border-radius: 10px;
+  width: 96vw;
+  height: 25vh;
+  margin: 20px auto;
+
+  .demo-text-1 {
+
+    .home-swiper {
+      width: 100vw;
+      border: none;
+      overflow: hidden;
+    }
+  }
+}
+
+.city-name{
+  display: flex;
+  justify-content: space-around;
+  font-size: 25px;
+  color: #494e58;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.city-list-row{
+  width: 96vw;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+
+  .city-list{
+    width: 18%;
+    // flex: 0 0 20%;
+    .city-list-img{
+      width: 100%;
+      height: 9vh;
+    }
+
+    .city-list-name{
+      display: flex;
+      justify-content: space-around;
+      font-size: 20px;
+      color: #494e58;
+      font-weight: bold;
+    }
+  }
+}
+
+.intro-title{
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: -20px;
+}
+
+.intro {
+  width: 96vw;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+
+  .at-card {
+    // flex: 0 0 43%;
+    width: 43%;
+    height: 20vh;
+    border: 1px solid #EBEEF5;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    padding: 0;
+
+    .at-card__header {
+      padding: 0;
+      display: none;
+    }
+
+    .at-card__content {
+      padding: 0;
+    }
+
+    .introImg {
+      border-radius: 10px;
+      width: 100%;
+      height: 14vh;
+    }
+  }
+
+}
+
+.room{
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: -20px;
+}
+
+.room-list{
+  width: 96vw;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+
+  .at-card {
+    // flex: 0 0 43%;
+    width: 43%;
+    height: 20vh;
+    border: 1px solid #EBEEF5;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    padding: 0;
+
+    .at-card__header {
+      padding: 0;
+      display: none;
+    }
+
+    .at-card__content {
+      padding: 0;
+    }
+
+    .roomImg {
+      border-radius: 10px;
+      width: 100%;
+      height: 14vh;
+    }
+  }
+}

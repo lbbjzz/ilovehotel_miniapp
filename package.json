@@ -47,6 +47,9 @@
     "node-sass": "^4.14.1",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
     "taro-ui": "^3.0.0-alpha.3"
   },
   "devDependencies": {

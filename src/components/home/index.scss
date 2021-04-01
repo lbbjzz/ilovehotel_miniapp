@@ -65,12 +65,12 @@
 
   .at-card {
     // flex: 0 0 43%;
-    width: 43%;
-    height: 20vh;
+    width: 42%;
+    // height: 22vh;
     border: 1px solid #EBEEF5;
     margin-top: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    padding: 0;
+    padding-bottom: 1vh;
 
     .at-card__header {
       padding: 0;
@@ -85,6 +85,26 @@
       border-radius: 10px;
       width: 100%;
       height: 14vh;
+    }
+
+    .floor-name{
+      margin: 8px auto auto 10px;
+      display: flex;
+      align-items: start;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .floor-content{
+      width: auto;
+      margin: 8px auto auto 10px;
+      display: flex;
+      align-items: start;
+      font-size: 20px;
+      color: gray;
+      overflow: hidden;
+      text-overflow:ellipsis;
+      white-space: nowrap
     }
   }
 
@@ -107,12 +127,12 @@
 
   .at-card {
     // flex: 0 0 43%;
-    width: 43%;
-    height: 20vh;
+    width: 42%;
+    // height: 22vh;
     border: 1px solid #EBEEF5;
     margin-top: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    padding: 0;
+    padding-bottom: 1vh;
 
     .at-card__header {
       padding: 0;
@@ -128,5 +148,43 @@
       width: 100%;
       height: 14vh;
     }
+
+    .room-type{
+      margin: 8px auto auto 10px;
+      display: flex;
+      align-items: start;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .room-intro{
+      margin: 8px auto auto 10px;
+      display: flex;
+      justify-content: space-between;
+
+      .room-price{
+        font-size: 26px;
+        font-weight: bold;
+        color: orangered;
+      }
+
+      .room-order{
+        margin-right: 10px;
+        border: none;
+        font-size: 26px;
+        color: #66B1FF;
+        font-weight: bold;
+      }
+    }
   }
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #a9b3c9;
+  margin-bottom: 14vh;
+  margin-top: 2vh;
 }

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {AtCard} from "taro-ui";
 import {View, Swiper, SwiperItem, Image, Text} from '@tarojs/components'
 import './index.scss'
-import {getCarousel, getIntro , getCity  , getRoom} from "../../api/components/home";
+import {getCarousel, getIntro , getCity  , getRoom ,getRoomType} from "../../api/components/home";
 
 class Home extends Component {
 
@@ -12,7 +12,7 @@ class Home extends Component {
       imageList: [],
       introList: [],
       cityList: [],
-      roomList: [],
+      roomTypeList: [],
     }
   }
 
@@ -20,7 +20,8 @@ class Home extends Component {
     this.getCarouselM()
     this.getIntroM()
     this.getCityListM()
-    this.getRoomeListM()
+    // this.getRoomListM()
+    this.getRoomTypeListM()
   }
 
   getCarouselM() {
@@ -44,10 +45,17 @@ class Home extends Component {
     })
   }
 
-  getRoomeListM(){
-    getRoom(1).then(res => {
-      console.log(res, 'Room')
-      this.setState({roomList: res.data.data})
+  // getRoomListM(){
+  //   getRoom().then(res => {
+  //     console.log(res, 'Room')
+  //     this.setState({roomList: res.data.data})
+  //   })
+  // }
+
+  getRoomTypeListM(){
+    getRoomType().then(res=>{
+      console.log(res, 'RoomType')
+      this.setState({roomTypeList: res.data.data})
     })
   }
 
@@ -98,9 +106,8 @@ class Home extends Component {
             this.state.introList.map(item => {
               return <AtCard key={item.floorId}>
                 <Image className='introImg' src={item.url} />
-                <View>
-                  {item.floorName}
-                </View>
+                <Text className='floor-name'>{item.floorName}</Text>
+                <Text className='floor-content'>{item.content}</Text>
               </AtCard>
             })
           }
@@ -108,15 +115,22 @@ class Home extends Component {
 
         {/*热门预定*/}
         <Text className='room'>热门预定</Text>
-        <View className='roome-list'>
+        <View className='room-list'>
           {
-            this.state.roomList.map(item => {
-              return <AtCard key={item.roomId}>
-                  <image className='roomImg' src={item.url[0]} />
+            this.state.roomTypeList.map(item => {
+              return <AtCard key={item.roomTypeName}>
+                  <Image className='roomImg' src={item.url[0]} />
+                  <Text className='room-type'>{item.roomTypeName}</Text>
+                  <View className='room-intro'>
+                  <Text className='room-price'>￥{item.price }</Text>
+                  <Text className='room-order'>立即预定</Text> 
+                  </View>
               </AtCard>
             })
           }
         </View>
+
+        <Text className='footer'>暂无更多</Text>
       </View>
     );
   }

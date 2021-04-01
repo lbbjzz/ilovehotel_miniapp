@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 import {View} from '@tarojs/components'
 import {AtTabBar} from 'taro-ui'
-import Home from "../../components/home";
+import Home from '../../components/home';
+import Order from '../../components/order'
+import User from '../../components/user';
 
 // import "taro-ui/dist/style/components/button.scss" // 按需引入
 // eslint-disable-next-line import/first
@@ -24,7 +26,7 @@ export default class Index extends Component {
   constructor() {
     super(...arguments)
     this.state = {
-      current: 0,
+      current: 2,
     }
   }
 
@@ -39,8 +41,15 @@ export default class Index extends Component {
   render() {
     return (
       <View>
-
-        <Home></Home>
+        {
+          this.state.current === 0 ?  <Home></Home> : null
+        }
+        {
+          this.state.current === 1 ? <Order></Order> : null 
+        }
+        {
+          this.state.current === 2 ?  <User></User> : null
+        }
         {/*底部*/}
         <AtTabBar
           fixed

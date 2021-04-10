@@ -3,7 +3,7 @@ import Taro from '@tarojs/taro'
 import {AtForm, AtInput, AtButton} from "taro-ui";
 import {Image, Text, View} from "@tarojs/components";
 import {login} from "../../api/pages/login";
-import Code from "../../components/code";
+import Code from "../../components/code/code-wechat";
 import './index.scss'
 import logo from '../../static/image/logo.png'
 
@@ -82,7 +82,9 @@ class Login extends Component {
               value={this.state.userInfo.password}
               onChange={this.pwdChange.bind(this)}
             />
+
             <Code getCode={this.getCodeFromChild.bind(this)}></Code>
+
             <AtButton type='primary' size='small' onClick={this.onSubmit.bind(this)}>登录</AtButton>
             <View className='form-footer'>
               <Text onClick={() => {

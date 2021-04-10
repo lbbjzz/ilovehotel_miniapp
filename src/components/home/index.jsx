@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {AtCard} from "taro-ui";
 import {View, Swiper, SwiperItem, Image, Text} from '@tarojs/components'
 import './index.scss'
-import {getCarousel, getIntro , getCity  , getRoom ,getRoomType} from "../../api/components/home";
+import {getCarousel, getIntro, getCity, getRoomType} from "../../api/components/home";
 
 class Home extends Component {
 
@@ -38,7 +38,7 @@ class Home extends Component {
     })
   }
 
-  getCityListM(){
+  getCityListM() {
     getCity().then(res => {
       console.log(res, 'City')
       this.setState({cityList: res.data.data.records})
@@ -52,8 +52,8 @@ class Home extends Component {
   //   })
   // }
 
-  getRoomTypeListM(){
-    getRoomType().then(res=>{
+  getRoomTypeListM() {
+    getRoomType().then(res => {
       console.log(res, 'RoomType')
       this.setState({roomTypeList: res.data.data})
     })
@@ -90,10 +90,10 @@ class Home extends Component {
         <Text className='city-name'>已开通城市</Text>
         <View className='city-list-row'>
           {
-            this.state.cityList.map(item =>{
+            this.state.cityList.map(item => {
               return <View key={item.id} className='city-list'>
-                  <Image className='city-list-img' mode='scaleToFill' src={item.imageUrl} />
-                  <Text className='city-list-name'>{item.cityName}</Text>
+                <Image className='city-list-img' mode='scaleToFill' src={item.imageUrl} />
+                <Text className='city-list-name'>{item.cityName}</Text>
               </View>
             })
           }
@@ -119,12 +119,12 @@ class Home extends Component {
           {
             this.state.roomTypeList.map(item => {
               return <AtCard key={item.roomTypeName}>
-                  <Image className='roomImg' src={item.url[0]} />
-                  <Text className='room-type'>{item.roomTypeName}</Text>
-                  <View className='room-intro'>
-                  <Text className='room-price'>￥{item.price }</Text>
-                  <Text className='room-order'>立即预定</Text> 
-                  </View>
+                <Image className='roomImg' src={item.url[0]} />
+                <Text className='room-type'>{item.roomTypeName}</Text>
+                <View className='room-intro'>
+                  <Text className='room-price'>￥{item.price}</Text>
+                  <Text className='room-order'>立即预定</Text>
+                </View>
               </AtCard>
             })
           }

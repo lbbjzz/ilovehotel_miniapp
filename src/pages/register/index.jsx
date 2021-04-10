@@ -4,7 +4,7 @@ import {Image, Text, View} from "@tarojs/components";
 import {AtButton, AtForm, AtInput, AtToast} from "taro-ui";
 import {getEmailCode} from "../../api/pages/register";
 import logo from "../../static/image/logo.png";
-import Code from "../../components/code";
+import Code from "../../components/code/code-wechat";
 import './index.scss'
 
 class Register extends Component {

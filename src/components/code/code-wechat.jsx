@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import Taro from '@tarojs/taro'
 import {View, Image} from "@tarojs/components";
 import {AtInput} from "taro-ui";
-import {getCodeApi} from "../../api/components/code";
+import {getCodeApi} from "../../api/components/code/code.wechat";
 
-class Index extends Component {
+class CodeWechat extends Component {
   constructor() {
     super(...arguments);
     this.state = {
@@ -53,4 +53,4 @@ class Index extends Component {
   }
 }
 
-export default Index
+export default CodeWechat

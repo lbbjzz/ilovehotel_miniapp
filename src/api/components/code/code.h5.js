@@ -4,7 +4,7 @@ export function getCodeApi() {
   return request({
     url: '/getcode',
     method: 'get',
-    // wechat
+    // H5
     responseType: 'blob'
   })
 }

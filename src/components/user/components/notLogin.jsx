@@ -20,7 +20,7 @@ class NotLogin extends Component {
         <Text className='title'>登录iLoveHotel,开启您的旅程</Text>
         <AtButton type='primary' size='small' className='login-button'
           onClick={this.toLogin.bind(this)}
-        >登录/注册</AtButton>
+        >登录</AtButton>
       </View>
     );
   }

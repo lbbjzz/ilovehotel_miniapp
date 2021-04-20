@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import Taro from '@tarojs/taro'
-import {AtForm, AtInput, AtButton} from "taro-ui";
-import {Image, Text, View} from "@tarojs/components";
+import {AtForm, AtInput, AtButton, AtToast} from "taro-ui";
+import {Image, View} from "@tarojs/components";
 import {login} from "../../api/pages/login";
-import Code from "../../components/code/code-wechat";
+import CodeWechat from "../../components/code/code-wechat";
+import CodeH5 from "../../components/code/code-h5";
 import './index.scss'
 import logo from '../../static/image/logo.png'
 
@@ -16,6 +17,11 @@ class Login extends Component {
         password: '',
       },
       code: '',
+      only: '',
+      // Toast组件
+      open: false,
+      msg: '',
+      icon: '',
     }
   }
 
@@ -49,10 +55,35 @@ class Login extends Component {
     })
   }
 
+  getOnlyFromChild(val) {
+    console.log(val, 'only')
+    this.setState({
+      only: val
+    })
+  }
+
+
   onSubmit() {
-    login(this.state.userInfo.username, this.state.userInfo.password, this.state.code
+    login(this.state.userInfo.username, this.state.userInfo.password, this.state.code, this.state.only
     ).then(res => {
-      console.log(res)
+      console.log(res.data.code, 'login')
+      if (res.data.code === 80200) {
+        this.setState({
+          open: true,
+          msg: res.data.msg,
+          icon: 'check-circle',
+        })
+        localStorage.setItem('loginData', JSON.stringify(res.data.data))
+        Taro.navigateTo({
+          url: '/pages/index/index'
+        })
+      } else {
+        this.setState({
+          open: true,
+          msg: res.data.msg,
+          icon: 'close-circle'
+        })
+      }
     })
   }
 
@@ -83,19 +114,28 @@ class Login extends Component {
               onChange={this.pwdChange.bind(this)}
             />
 
-            <Code getCode={this.getCodeFromChild.bind(this)}></Code>
+            {/*微信小程序验证码组件*/}
+            {/*<CodeWechat getCode={this.getCodeFromChild.bind(this)}></CodeWechat>*/}
+
+            {/*H5验证码组件*/}
+            <CodeH5 getCode={this.getCodeFromChild.bind(this)} getOnly={this.getOnlyFromChild.bind(this)}></CodeH5>
 
             <AtButton type='primary' size='small' onClick={this.onSubmit.bind(this)}>登录</AtButton>
-            <View className='form-footer'>
-              <Text onClick={() => {
-                Taro.redirectTo({url: '/pages/reset/index'})
-              }}
-              >忘记密码？</Text>
-              <Text onClick={() => {
-                Taro.redirectTo({url: '/pages/register/index'})
-              }}
-              >前去注册</Text>
-            </View>
+
+            {/*Toast提示组件*/}
+            <AtToast isOpened={this.state.open} text={this.state.msg} icon={this.state.icon}></AtToast>
+
+            {/*注册/忘记密码*/}
+            {/*<View className='form-footer'>*/}
+            {/*  <Text onClick={() => {*/}
+            {/*    Taro.redirectTo({url: '/pages/reset/index'})*/}
+            {/*  }}*/}
+            {/*  >忘记密码？</Text>*/}
+            {/*  <Text onClick={() => {*/}
+            {/*    Taro.redirectTo({url: '/pages/register/index'})*/}
+            {/*  }}*/}
+            {/*  >前去注册</Text>*/}
+            {/*</View>*/}
           </View>
         </AtForm>
       </View>
